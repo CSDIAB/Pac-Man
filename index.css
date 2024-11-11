@@ -1,0 +1,25 @@
+li {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+button {
+    padding : 5px;
+}
+input {
+    padding : 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: azure;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    h1 {
+        transition: opacity 0.5s ease;
+    }
+
+    h1:hover {
+        opacity: 0;
+    }
+}
