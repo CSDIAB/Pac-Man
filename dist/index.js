@@ -67,9 +67,11 @@ function renderToDoList(toDoList) {
     const taskElement = document.createElement("li");
     taskElement.setAttribute(
       "class",
-      "class = hover:bg-green-700 text-black font-bold py-2 px-4 rounded"
+      "class = hover:bg-green-700 text-black font-bold py-5 px-8 rounded"
     );
     taskElement.innerText = task.taskName;
+    //const dateElement = document.createElement("p");
+    //dateElement.innerText = task.createdAt;
     const deleteButton = document.createElement("button");
     deleteButton.setAttribute(
       "class",
