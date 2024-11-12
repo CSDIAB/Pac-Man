@@ -38,15 +38,15 @@ const toDoList = {
 
 //Modify State
 
-function addTask(taskName) {
+function addTask(taskName, taskDate) {
   const newTask = {
     id: toDoList.tasks.length + 1,
     taskName: taskName,
+    taskDate: taskDate,
     isCompleted: false,
     createdAt: new Date(),
   };
   toDoList.tasks.push(newTask);
-  renderToDoList;
 }
 
 function deleteTask(toDoList, taskId) {
@@ -75,9 +75,6 @@ function renderToDoList(toDoList) {
       "class = hover:bg-green-200 text-black subpixel-antialiased py-5 px-8 rounded"
     );
     taskElement.innerText = `${task.taskName} - ${task.taskDate}`;
-
-    //const dateElement = document.createElement("p");
-    //dateElement.innerText = task.createdAt;
     const deleteButton = document.createElement("button");
     deleteButton.setAttribute(
       "class",
@@ -93,24 +90,18 @@ function renderToDoList(toDoList) {
   });
 }
 
-renderToDoList(toDoList);
-
 //Script
 const addButton = document.getElementById("add-button");
 addButton.addEventListener("click", () => {
   const taskName = prompt("Enter task name:");
   const taskDate = prompt("Enter task date:");
 
-  if (taskName) {
-    addTask(taskName);
-    renderToDoList(toDoList);
-  }
-  if (taskDate) {
-    addTask(taskDate);
+  if (taskName && taskDate) {
+    addTask(taskName, taskDate);
     renderToDoList(toDoList);
   }
 });
-
+renderToDoList(toDoList);
 //write a function that sets a timer for each task of 30 minutes
 const timer = (task) => {
   setTimeout(() => {
