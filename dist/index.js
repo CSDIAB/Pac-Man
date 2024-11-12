@@ -5,27 +5,27 @@ const toDoList = {
   tasks: [
     {
       id: 1,
-      taskName: "task1",
+      taskName: "Work on Python",
       isCompleted: false,
     },
     {
       id: 2,
-      taskName: "task2",
+      taskName: "Submit Grad School Application",
       isCompleted: false,
     },
     {
       id: 3,
-      taskName: "task3",
+      taskName: "Submit Job Application",
       isCompleted: false,
     },
     {
       id: 4,
-      taskName: "task4",
+      taskName: "Pay Rent and Termination Fee",
       isCompleted: false,
     },
     {
       id: 5,
-      taskName: "task5",
+      taskName: "Learn more about Tailwind CSS and use it on Portfolio",
       isCompleted: false,
     },
   ],
@@ -67,7 +67,7 @@ function renderToDoList(toDoList) {
     const taskElement = document.createElement("li");
     taskElement.setAttribute(
       "class",
-      "class = hover:bg-green-700 text-black font-bold py-5 px-8 rounded"
+      "class = hover:bg-green-400 text-black subpixel-antialiased py-5 px-8 rounded"
     );
     taskElement.innerText = task.taskName;
     //const dateElement = document.createElement("p");
