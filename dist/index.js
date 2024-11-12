@@ -67,7 +67,7 @@ function renderToDoList(toDoList) {
     const taskElement = document.createElement("li");
     taskElement.setAttribute(
       "class",
-      "class = hover:bg-green-400 text-black subpixel-antialiased py-5 px-8 rounded"
+      "class = hover:bg-green-200 text-black subpixel-antialiased py-5 px-8 rounded"
     );
     taskElement.innerText = task.taskName;
     //const dateElement = document.createElement("p");
@@ -75,7 +75,7 @@ function renderToDoList(toDoList) {
     const deleteButton = document.createElement("button");
     deleteButton.setAttribute(
       "class",
-      "class = hover:bg-red-700 text-black font-bold py-2 px-4 rounded"
+      "class = hover:bg-red-400 text-black font-bold py-2 px-4 rounded"
     );
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", () => {
