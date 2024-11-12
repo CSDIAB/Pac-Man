@@ -6,26 +6,31 @@ const toDoList = {
     {
       id: 1,
       taskName: "Work on Python",
+      taskDate: "2021-09-30",
       isCompleted: false,
     },
     {
       id: 2,
       taskName: "Submit Grad School Application",
+      taskDate: "2021-09-30",
       isCompleted: false,
     },
     {
       id: 3,
       taskName: "Submit Job Application",
+      taskDate: "2021-09-30",
       isCompleted: false,
     },
     {
       id: 4,
       taskName: "Pay Rent and Termination Fee",
+      taskDate: "2021-09-30",
       isCompleted: false,
     },
     {
       id: 5,
       taskName: "Learn more about Tailwind CSS and use it on Portfolio",
+      taskDate: "2021-09-30",
       isCompleted: false,
     },
   ],
@@ -69,13 +74,14 @@ function renderToDoList(toDoList) {
       "class",
       "class = hover:bg-green-200 text-black subpixel-antialiased py-5 px-8 rounded"
     );
-    taskElement.innerText = task.taskName;
+    taskElement.innerText = `${task.taskName} - ${task.taskDate}`;
+
     //const dateElement = document.createElement("p");
     //dateElement.innerText = task.createdAt;
     const deleteButton = document.createElement("button");
     deleteButton.setAttribute(
       "class",
-      "class = hover:bg-red-400 text-black font-bold py-2 px-4 rounded"
+      "class = hover:bg-red-400 hover:scale-110 transition-transform text-black font-bold py-2 px-4 rounded "
     );
     deleteButton.textContent = "Delete";
     deleteButton.addEventListener("click", () => {
@@ -97,6 +103,10 @@ addButton.addEventListener("click", () => {
 
   if (taskName) {
     addTask(taskName);
+    renderToDoList(toDoList);
+  }
+  if (taskDate) {
+    addTask(taskDate);
     renderToDoList(toDoList);
   }
 });
