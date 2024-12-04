@@ -133,3 +133,22 @@ Your rendering approach is solid. Here’s how you can make it more efficient an
 - **Task prioritization**: Add priority levels to tasks (low, medium, high).
 
 ---
+
+#### Features to Add\*\*
+
+- the list displays based on date, you can go to myLists to view different lists
+- automatically capitalize the first letter when writing a task?
+- automatically date a task when creating a task
+- make the task date field detect when no date is inputted
+- make the list save to localStorage?
+- create a sign in and auth?
+
+#### Notes\*\*
+
+- when clicking on current list you have to refresh before it loads versus for settings and my lists
+  this does not happen
+- need for styling changes on Settings and my Lists
+- we will have to set up a new piece of state for myLists - you can hardcode the state for now and then eventually
+  move to a localStorage based system for retention
+- we will also have to set up new routes for the lists page
+- the settings page will be set up so that a user can change the styling of the whole app, this will most likely be the most challenging portion we want users to be able to essentially personalize the app however they want

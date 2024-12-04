@@ -16,12 +16,6 @@ const toDoList = {
       isCompleted: false,
     },
     {
-      id: 3,
-      taskName: "Submit Job Application",
-      taskDate: "2021-09-30",
-      isCompleted: false,
-    },
-    {
       id: 4,
       taskName: "Pay Rent and Termination Fee",
       taskDate: "2021-09-30",
@@ -29,12 +23,28 @@ const toDoList = {
     },
     {
       id: 5,
-      taskName: "Learn more about Tailwind CSS and use it on Portfolio",
+      taskName: "Learn more abouchatt Tailwind CSS and use it on Portfolio",
       taskDate: "2021-09-30",
       isCompleted: false,
     },
   ],
 };
+
+const myLists = () => `<h1>My Lists</h1>
+<ul>
+<li>List 1</li>
+<li>List 2</li>
+<li>List 3</li>
+</ul>
+`;
+const settings =
+  () => `<h1 class = 'text-xl' text-decoration-line: underline;>Settings</h1>
+<ul>
+<li>Colors</li>
+<li>Styles</li>
+<li>Layout</li>
+</ul>
+`;
 
 //Modify State
 
@@ -91,6 +101,7 @@ function renderToDoList(toDoList) {
 }
 
 //Script
+/*
 const addButton = document.getElementById("add-button");
 addButton.addEventListener("click", () => {
   const taskName = prompt("Enter task name:");
@@ -101,11 +112,48 @@ addButton.addEventListener("click", () => {
     renderToDoList(toDoList);
   }
 });
+*/
 renderToDoList(toDoList);
-//write a function that sets a timer for each task of 30 minutes
+/*write a function that sets a timer for each task of 30 minutes
 const timer = (task) => {
   setTimeout(() => {
     alert(`Time is up for ${task.taskName}`);
   }, 1000 * 60 * 30);
 };
 console.log(timer(toDoList.tasks[0]));
+*/
+
+const taskForm = document.getElementById("task-form");
+taskForm.addEventListener("submit", (event) => {
+  event.preventDefault(); //the page will not reload
+  const taskName = document.getElementById("task-name").value;
+  const taskDate = document.getElementById("task-date").value;
+  const errorMessage = document.getElementById("error-message");
+  errorMessage.innerText = "";
+  if (taskName.value === "" || taskDate.value === "") {
+    errorMessage.innerText = "Task Name and Task Date are required";
+    return;
+  }
+  addTask(taskName, taskDate);
+  renderToDoList(toDoList);
+  taskForm.reset();
+});
+
+function router() {
+  const content = document.getElementById("task-list");
+  const route = window.location.hash;
+
+  const routes = {
+    "#myLists": myLists,
+    "#Settings": settings,
+    "#toDoList": toDoList,
+  };
+
+  content.innerHTML = routes[route]
+    ? routes[route]()
+    : "<h1>404 - Page not Found</h1>";
+}
+
+window.addEventListener("hashchange", router);
+
+window.addEventListener("load", router);

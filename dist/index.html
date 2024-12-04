@@ -9,16 +9,33 @@
 </head>
 <body>
     <h1 class="bg-red-400 text-center font-bold underline text-gray-100 text-5xl font-mono px-5 py-8">My To-Do List</h1>
-  <nav class="bg-violet-500 text-gray-100 font-mono text-center py-5">
-    <button class="hover:scale-110 transition-transform underline px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:outline-none">My Lists</button>
-    <button class="hover:scale-110 transition-transform underline px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:outline-none">Categories</button>
-    <button class="hover:scale-110 transition-transform underline px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:outline-none">Settings</button>
+  <nav class="bg-[#0077B6] text-gray-100 font-mono text-center py-5">
+    <a href = "#myLists" class="text-white font-bold mx-4 hover:text-[#FFDD166]">My Lists</a>
+    <a href = "#Settings" class ="font-bold mx-4 hover:text-[#FFDD166]">Settings</a>
+    <a href = "#toDoList" class ="font-bold mx-4 hover:text-[#FFDD166]">Current List</a>
     </nav>
-  <!-- List Container where tasks will be rendered -->
+  <!-- List Container where tasks and Lists will be rendered -->
   <ul class="bg-yellow-100 font-mono " id="task-list"></ul>
+  <ul class="bg-yellow-100 font-mono " id = 'content'></ul>
 
   <!-- Optionally, you can add an input field to allow adding tasks -->
-<button class="bg-violet-500 text-gray-100 font-mono hover:scale-110 transition-transform py-5 px-8" id="add-button">Add Task</button>
+<form action = "submit" id = "task-form" class="bg-violet-500 text-gray-100 text-xs font-mono hover:scale-100 transition-transform py-3 px-5" id="add-button">
+<div>
+  <label>
+    Enter Task: 
+    <input type="text" id="task-name" class="bg-gray-100 text-gray-900 font-mono px-2 py-1" placeholder="Enter Task" required>
+  </label>
+</div>  
+<div>
+  <label>
+    Enter Task Date: 
+    <input type="date" min = "" id="task-date" class="bg-gray-100 text-gray-900 font-mono px-2 py-1" placeholder="Enter Date" required>
+  </label>
+</div>  
+<button type="submit" class="bg-[#FFDD166] text-gray-900 font-mono px-2 py-1">Add Task</button>
+<div id = "error-message"></div>
+
+</form>
 
  
 </body>
